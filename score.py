@@ -14,7 +14,7 @@ potential = []	#scores above threshold
 
 for i in range(len(master_sequence) - frame_size):
 	cur_seq = master_sequence[i:i+100]
-	score = cur_seq.count('1')
+	score = cur_seq.count('1')*100.0/frame_size
 	scores.append(score)
 	if score > lower and score <= upper:
 		potential.append(i)
